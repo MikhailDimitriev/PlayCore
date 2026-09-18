@@ -20,11 +20,11 @@ export const loader = async ({ params }: Route.LoaderArgs) => {
 
 export const meta: Route.MetaFunction = ({ loaderData }) => {
   if (!loaderData) {
-    return [{ title: "GamePlay" }];
+    return [{ title: "PlayCore" }];
   }
 
   return [
-    { title: `${loaderData.game.title} — GamePlay` },
+    { title: `${loaderData.game.title} — PlayCore` },
     { name: "description", content: loaderData.game.shortDescription },
   ];
 };

@@ -4,7 +4,7 @@ import { GameCatalog } from "~/widgets/game-catalog";
 import { HomeHero } from "./ui/HomeHero";
 
 export const meta: Route.MetaFunction = () => [
-  { title: "GamePlay — Free-to-play game catalog" },
+  { title: "PlayCore — Free-to-play game catalog" },
   {
     name: "description",
     content: "Explore free-to-play games for PC and browser.",

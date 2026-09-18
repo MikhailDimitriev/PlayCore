@@ -2,7 +2,7 @@
 
 ## About
 
-GamePlay — a game catalog built on React Router 8 (Framework Mode, SSR), TypeScript, Tailwind 4, Vite.
+PlayCore — a game catalog built on React Router 8 (Framework Mode, SSR), TypeScript, Tailwind 4, Vite.
 Data comes from the FreeToGame API (https://www.freetogame.com/api-doc, no API key required).
 
 Features:
