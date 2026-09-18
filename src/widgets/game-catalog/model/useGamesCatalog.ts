@@ -2,17 +2,26 @@ import { useEffect, useRef } from "react";
 import { useGameStore } from "~/entities/game";
 
 export const useGamesCatalog = () => {
-  const { games, currentPage, pageSize, isLoading, errorMessage, gamesFetch, gamesPageSet } =
-    useGameStore();
+  const {
+    games,
+    currentPage,
+    pageSize,
+    sortBy,
+    platform,
+    genre,
+    isLoading,
+    errorMessage,
+    gamesFetch,
+    gamesPageSet,
+  } = useGameStore();
 
   const listRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    gamesFetch();
-  }, [gamesFetch]);
+    gamesFetch({ sortBy, platform, category: genre || undefined });
+  }, [gamesFetch, sortBy, platform, genre]);
 
-  const totalCount = games.length;
-  const pagesCount = Math.ceil(totalCount / pageSize);
+  const pagesCount = Math.ceil(games.length / pageSize);
   const startIndex = (currentPage - 1) * pageSize;
   const visibleGames = games.slice(startIndex, startIndex + pageSize);
 
@@ -24,7 +33,6 @@ export const useGamesCatalog = () => {
   return {
     currentPage,
     visibleGames,
-    totalCount,
     pagesCount,
     isLoading,
     errorMessage,

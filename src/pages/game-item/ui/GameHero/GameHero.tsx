@@ -1,13 +1,13 @@
+import type { GameHeroData } from "../../model/gamePresentation";
+import {Link} from "react-router";
+
 type GameHeroProps = {
-  image: string;
-  title: string;
-  genre: string;
-  platform: string;
-  description: string;
-  url: string;
+  hero: GameHeroData;
 };
 
-const GameHero = ({ image, title, genre, platform, description, url }: GameHeroProps) => {
+const GameHero = ({ hero }: GameHeroProps) => {
+  const { image, title, genre, platform, description, url } = hero;
+
   return (
     <section className="overflow-hidden rounded-xl border border-edge bg-surface-raised">
       <div className="relative">
@@ -29,14 +29,15 @@ const GameHero = ({ image, title, genre, platform, description, url }: GameHeroP
               {genre} · {platform}
             </p>
           </div>
-          <a
-            href={url}
+
+          <Link
+            to={url}
             target="_blank"
             rel="noreferrer"
             className="inline-flex shrink-0 items-center justify-center rounded-lg bg-phosphor px-6 py-3 font-display text-base font-semibold text-surface transition-opacity hover:opacity-90"
           >
             Play now
-          </a>
+          </Link>
         </div>
         <p className="mt-4 max-w-2xl text-lg leading-relaxed text-mist">
           {description}

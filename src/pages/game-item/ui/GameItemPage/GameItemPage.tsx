@@ -1,10 +1,8 @@
 import { Link } from "react-router";
-
 import type { GameDetail } from "~/entities/game";
-
 import {
-  getHeroImage,
   toGameFacts,
+  toGameHeroData,
   toGalleryScreenshots,
   toParagraphs,
 } from "../../model/gamePresentation";
@@ -20,6 +18,7 @@ type GameItemPageProps = {
 
 const GameItemPage = ({ game }: GameItemPageProps) => {
   const galleryScreenshots = toGalleryScreenshots(game.screenshots);
+  const hero = toGameHeroData(game);
 
   return (
     <article className="py-10 inline-padding">
@@ -32,14 +31,7 @@ const GameItemPage = ({ game }: GameItemPageProps) => {
         </Link>
       </div>
 
-      <GameHero
-        image={getHeroImage(game)}
-        title={game.title}
-        genre={game.genre}
-        platform={game.platform}
-        description={game.shortDescription}
-        url={game.gameUrl}
-      />
+      <GameHero hero={hero} />
 
       <div className="mt-10 grid gap-12 lg:grid-cols-[minmax(0,1fr)_24rem]">
         <div className="space-y-12">

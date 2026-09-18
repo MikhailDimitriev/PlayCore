@@ -9,6 +9,24 @@ export const getHeroImage = (
   game: Pick<GameDetail, "screenshots" | "thumbnail">,
 ): string => game.screenshots[0]?.image ?? game.thumbnail;
 
+export type GameHeroData = {
+  image: string;
+  title: string;
+  genre: string;
+  platform: string;
+  description: string;
+  url: string;
+};
+
+export const toGameHeroData = (game: GameDetail): GameHeroData => ({
+  image: getHeroImage(game),
+  title: game.title,
+  genre: game.genre,
+  platform: game.platform,
+  description: game.shortDescription,
+  url: game.gameUrl,
+});
+
 export const toGameFacts = (game: GameDetail): GameFact[] => [
   { label: "Genre", value: game.genre },
   { label: "Platform", value: game.platform },

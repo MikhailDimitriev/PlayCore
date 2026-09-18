@@ -1,6 +1,6 @@
 import type { Route } from "./+types/HomePage";
-import { useGamesCatalog } from "./model/hooks/useGamesCatalog";
-import { CatalogContent } from "./ui/CatalogContent";
+import { useGameStore } from "~/entities/game";
+import { GameCatalog } from "~/widgets/game-catalog";
 import { HomeHero } from "./ui/HomeHero";
 
 export const meta: Route.MetaFunction = () => [
@@ -12,30 +12,13 @@ export const meta: Route.MetaFunction = () => [
 ];
 
 const HomePage = () => {
-  const {
-    currentPage,
-    visibleGames,
-    totalCount,
-    pagesCount,
-    isLoading,
-    errorMessage,
-    listRef,
-    handlePageChange,
-  } = useGamesCatalog();
+  const totalCount = useGameStore((state) => state.games.length);
 
   return (
     <div className="py-10 inline-padding">
       <HomeHero totalCount={totalCount} />
 
-      <CatalogContent
-        currentPage={currentPage}
-        visibleGames={visibleGames}
-        pagesCount={pagesCount}
-        isLoading={isLoading}
-        errorMessage={errorMessage}
-        listRef={listRef}
-        onPageChange={handlePageChange}
-      />
+      <GameCatalog />
     </div>
   );
 };

@@ -1,11 +1,11 @@
 import { GameCard } from "~/entities/game";
 import type { Game } from "~/entities/game";
 
-type GamesListProps = {
+type GameListProps = {
   games: Game[];
 };
 
-const GamesList = ({ games }: GamesListProps) => {
+const GameList = ({ games }: GameListProps) => {
   return (
     <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
       {games.map((game) => (
@@ -15,4 +15,4 @@ const GamesList = ({ games }: GamesListProps) => {
   );
 };
 
-export { GamesList };
+export { GameList };

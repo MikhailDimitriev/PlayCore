@@ -1,0 +1,1 @@
+export { GameCatalog } from "./ui/GameCatalog";

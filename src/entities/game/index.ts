@@ -1,6 +1,7 @@
 export { getGames, getGameById } from "./api";
 export { useGameStore } from "./model/store/useGameStore";
 export { GameCard } from "./ui";
+export { SORT_OPTIONS, PLATFORM_OPTIONS, GENRE_OPTIONS } from "./model/options";
 export type {
   GameListParams,
   GamePlatform,
