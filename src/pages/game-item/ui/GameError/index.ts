@@ -1,0 +1,1 @@
+export { GameError } from "./GameError";

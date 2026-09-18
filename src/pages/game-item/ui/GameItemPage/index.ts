@@ -1,0 +1,1 @@
+export { GameItemPage } from "./GameItemPage";
