@@ -1,0 +1,1 @@
+export { FavoritesNavItem } from "./FavoritesNavItem"

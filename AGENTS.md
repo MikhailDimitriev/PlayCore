@@ -7,7 +7,8 @@ Data comes from the FreeToGame API (https://www.freetogame.com/api-doc, no API k
 
 Features:
 - game catalog with sorting and filtering;
-- a dedicated page for each individual game (by id).
+- a dedicated page for each individual game (by id);
+- favorites: add/remove games (on cards and detail page), a `/favorites` page, persisted to LocalStorage via the zustand persist store in `src/entities/favorites/`.
 
 ## Commands
 

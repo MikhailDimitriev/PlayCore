@@ -1,5 +1,6 @@
-import { GameCard } from "~/entities/game";
+import { GameGrid } from "~/entities/game";
 import type { Game } from "~/entities/game";
+import { FavoriteButton } from "~/features/favorite-button";
 
 type GameListProps = {
   games: Game[];
@@ -7,11 +8,10 @@ type GameListProps = {
 
 const GameList = ({ games }: GameListProps) => {
   return (
-    <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-      {games.map((game) => (
-        <GameCard key={game.id} {...game} />
-      ))}
-    </section>
+    <GameGrid
+      games={games}
+      renderAction={(game) => <FavoriteButton game={game} />}
+    />
   );
 };
 

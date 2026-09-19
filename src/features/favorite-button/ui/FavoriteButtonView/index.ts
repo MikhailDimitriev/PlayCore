@@ -1,0 +1,1 @@
+export { FavoriteButtonView } from "./FavoriteButtonView"

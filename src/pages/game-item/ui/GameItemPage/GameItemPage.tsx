@@ -1,5 +1,6 @@
 import { Link } from "react-router";
 import type { GameDetail } from "~/entities/game";
+import { FavoriteButton } from "~/features/favorite-button";
 import {
   toGameFacts,
   toGameHeroData,
@@ -32,6 +33,10 @@ const GameItemPage = ({ game }: GameItemPageProps) => {
       </div>
 
       <GameHero hero={hero} />
+
+      <div className="mt-4">
+        <FavoriteButton game={game} withLabel />
+      </div>
 
       <div className="mt-10 grid gap-12 lg:grid-cols-[minmax(0,1fr)_24rem]">
         <div className="space-y-12">
