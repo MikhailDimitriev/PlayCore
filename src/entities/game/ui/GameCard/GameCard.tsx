@@ -31,7 +31,7 @@ const GameCard = ({
           className="aspect-video w-full object-cover"
         />
         <div className="flex flex-1 flex-col gap-3 p-4">
-          <h3 className="font-display text-lg font-semibold leading-snug text-frost">
+          <h3 className="font-display text-lg font-semibold leading-snug text-frost text-overflow-1">
             {title}
           </h3>
           <p className="mt-auto text-sm text-mist">

@@ -14,7 +14,7 @@ const GameHero = ({ hero }: GameHeroProps) => {
         <img
           src={image}
           alt={`${title} screenshot`}
-          className="aspect-[16/7] w-full object-cover"
+          className="aspect-16/7 w-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-surface via-surface/30 to-transparent" />
       </div>

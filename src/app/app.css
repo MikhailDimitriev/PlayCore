@@ -40,3 +40,11 @@ a:focus-visible {
   outline: 2px solid var(--color-phosphor);
   outline-offset: 3px;
 }
+
+.text-overflow-1 {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

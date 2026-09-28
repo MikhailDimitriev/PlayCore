@@ -38,7 +38,8 @@ FSD rules:
 - Work on one component at a time, noting the files you changed.
 
 Entry and routes:
-- `src/root.tsx` — root Layout; `src/routes.ts` — route config; route modules (`loader`, `meta`, pages) live in the `pages` layer.
+- `src/app/root.tsx` — root Layout; `src/app/routes.ts` — route config; `src/app/routes/*` — route modules (`loader`, `meta`, `ErrorBoundary`), page components live in the `pages` layer and are imported via slice public APIs.
+- React Router generates `./+types/*` only for route modules inside the app directory, so route modules must stay in `src/app`; pages must not import `./+types`.
 - Route types are generated into `.react-router/types/` and imported as `./+types/...`. Alias `~/` → `./src`.
 
 ## Skills

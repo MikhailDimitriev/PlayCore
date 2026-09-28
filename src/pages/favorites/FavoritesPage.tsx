@@ -1,12 +1,9 @@
-import type { Route } from "./+types/FavoritesPage";
 import { useFavoritesStore } from "~/entities/favorites";
 import { GameGrid } from "~/entities/game";
 import { FavoriteButton } from "~/features/favorite-button";
 import { useIsMounted } from "~/shared/hooks/useIsMounted";
-import { toFavoritesMeta, toFavoritesSummary } from "./model/favoritesPresentation";
+import { toFavoritesSummary } from "./model/favoritesPresentation";
 import { FavoritesEmpty } from "./ui";
-
-export const meta: Route.MetaFunction = () => toFavoritesMeta();
 
 const FavoritesPage = () => {
   const isMounted = useIsMounted();
