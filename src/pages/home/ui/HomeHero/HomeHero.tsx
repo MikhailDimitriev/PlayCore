@@ -5,7 +5,7 @@ type HomeHeroProps = {
 const HomeHero = ({ totalCount }: HomeHeroProps) => {
   return (
     <section className="mb-10 max-w-2xl">
-      <h1 className="font-display text-3xl font-semibold tracking-tight text-frost sm:text-[42px]">
+      <h1 className="font-display text-2xl font-semibold tracking-tight text-frost sm:text-3xl">
         Play now, pay nothing.
       </h1>
       <p className="mt-3 text-lg leading-relaxed text-mist">
